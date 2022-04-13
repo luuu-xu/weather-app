@@ -1,0 +1,235 @@
+.material-icons-outlined {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* --------------------------------------------- */
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  width: 100%;
+  min-height: fit-content;
+  height: 8%;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+#search-bar {
+  font-size: 1.5rem;
+  padding: .2rem .5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+#input-search {
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: .2rem .5rem;
+  border: none;
+  border-bottom: 2px solid transparent;
+}
+
+#input-search:focus {
+  outline: none;
+  border-bottom: 2px dotted black;
+}
+
+#btn-search {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  width: 30px;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn-search:focus,
+#btn-search:hover {
+  cursor: pointer;
+  outline: none;
+  border: 2px dotted black; 
+}
+
+/* --------------------------------------------- */
+/* https://www.tutorialstonight.com/css-toggle-switch-with-text.php */
+.toggle {
+  --width: 60px;
+  --height: calc(var(--width) / 2);
+
+  position: relative;
+  display: inline-block;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--height);
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--height);
+  border: 2px dotted black;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .slider::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(var(--height) - 8px);
+  height: calc(var(--height) - 8px);
+  border-radius: calc(var(--height) / 2);
+  border: 2px solid black;
+  transition: all 0.4s ease-in-out;
+}
+
+/* .toggle input:checked + .slider {
+  background-color: #2196F3;
+} */
+
+.toggle input:checked + .slider::before {
+  transform: translateX(calc(var(--width) - var(--height)));
+}
+
+.toggle .labels {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  content: attr(data-off);
+  position: absolute;
+  right: 5px;
+  color: black;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  content: attr(data-on);
+  position: absolute;
+  left: 8px;
+  color: black;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked ~ .labels::after {
+  opacity: 0;
+}
+
+.toggle input:checked ~ .labels::before {
+  opacity: 1;
+}
+
+/* --------------------------------------------- */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.weather-name {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.weather-temp {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.weather-description,
+.weather-temphighlow {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* --------------------------------------------- */
+.forecast-container {
+  width: 100%;
+  min-height: fit-content;
+  height: 16%;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-day {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* .forecast-icon {
+  filter: grayscale(1);
+} */
+
+.forecast-temphighlow {
+  margin: 0;
+}
