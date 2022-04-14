@@ -14,7 +14,7 @@ function callWeatherAPI(lat, lon, unit) {
 
 function callGeoAPI(city) {
   return fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=99bb28ddc7a1edd5945358f2000facb6`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=99bb28ddc7a1edd5945358f2000facb6`,
     {mode: 'cors'}
   );
 };
